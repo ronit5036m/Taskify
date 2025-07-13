@@ -1,0 +1,12 @@
+.spin {
+  animation: spin 0.5s infinite linear;
+  position: absolute;
+}
+@keyframes spin {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
