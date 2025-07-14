@@ -113,7 +113,7 @@ function ViewTask() {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen px-4 py-8 bg-gray-50">
+      <div className="min-h-screen px-4 py-8 bg-white">
         <div
           className={`max-w-7xl mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-3`}
         >
