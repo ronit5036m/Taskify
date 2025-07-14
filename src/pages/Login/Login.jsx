@@ -11,6 +11,7 @@ export default function LoginForm() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm();
 
@@ -36,6 +37,7 @@ export default function LoginForm() {
         toast.error("Server error. Please try again later.");
       }
     }
+    reset();
   };
 
   return (

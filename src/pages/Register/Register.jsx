@@ -18,7 +18,6 @@ export default function RegisterForm() {
       const response = await axiosInstance.post("/register", data);
       naviagte("/login");
       toast.success(response.data.message);
-      reset();
     } catch (error) {
       if (error.response) {
         toast.error(error.response.data.message || "Registration failed.");
@@ -26,6 +25,7 @@ export default function RegisterForm() {
         toast.error("Server error, Please try again later");
       }
     }
+    reset();
   };
 
   const password = watch("password");

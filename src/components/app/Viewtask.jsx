@@ -145,7 +145,7 @@ function ViewTask() {
                   >
                     {task.completed ? "Task completed" : "Not complete yet"}
                   </span>
-                  <span className="text-sm bg-gray-200 px-2 py-1 rounded ml-2 font-bold">
+                  <span className="text-sm px-2 py-1 rounded ml-2 font-bold text-zinc-400">
                     {formatDate(task.createdAt)}
                   </span>
                 </div>
@@ -194,7 +194,7 @@ function ViewTask() {
                       </button>
                       <button
                         onClick={() => handleDelete(task._id)}
-                        className="bg-red-500 text-white px-4 py-2 rounded font-bold text-lg cursor-pointer"
+                        className="bg-[#ee3f3f] text-white px-4 py-2 rounded font-bold text-lg cursor-pointer"
                       >
                         Delete
                       </button>
