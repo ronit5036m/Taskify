@@ -6,6 +6,7 @@ import Footer from "../Footer/Footer";
 import Loading from "../Loading/Loading";
 import { Link } from "react-router-dom";
 import { Plus } from "lucide-react";
+import Tasknotfound from "../Tasknotfound/Tasknotfound";
 function formatDate(dt) {
   if (!dt) return "";
   const date = new Date(dt);
@@ -114,29 +115,20 @@ function ViewTask() {
       <Navbar />
       <div className="min-h-screen px-4 py-8 bg-gray-50">
         <div
-          className={`max-w-7xl mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-3 ${
-            loading ? "mt-0" : "mt-[50px]"
-          }`}
+          className={`max-w-7xl mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-3`}
         >
           {loading ? (
             <div className="col-span-full h-screen w-full flex justify-center items-center text-zinc-600 text-4xl">
               <Loading />
             </div>
           ) : tasks.length === 0 ? (
-            <div className="col-span-full flex flex-col justify-center items-center text-zinc-400 text-3xl min-h-[70vh]">
-              No tasks yet.
-              <Link
-                to="/addtask"
-                className="mt-6 p-4 rounded-full font-extrabold text-blue-700 bg-blue-200 hover:bg-blue-300 transition-all"
-                title="Add new task"
-              >
-                <Plus size={35} />
-              </Link>
+            <div className="col-span-full h-[100vh] flex items-center justify-center">
+              <Tasknotfound completed="" />
             </div>
           ) : (
             tasks.map((task) => (
               <div
-                className="bg-white rounded-2xl shadow-md p-6 flex flex-col justify-between gap-4 border border-gray-100"
+                className="bg-white rounded-2xl shadow-md p-6 flex flex-col justify-between gap-4 border border-gray-100 m-10"
                 key={task._id}
               >
                 <div className="flex justify-between items-center">

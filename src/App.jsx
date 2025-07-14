@@ -12,6 +12,7 @@ import { AuthProvider } from "./Context/AuthContext";
 import Completedtask from "./components/app/Completedtask";
 
 import "./App.css";
+import Tasknotfound from "./components/Tasknotfound/Tasknotfound";
 
 const App = () => {
   return (
@@ -67,6 +68,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<Errorpage />} />
+          <Route path="/not" element={<Tasknotfound />} />
         </Routes>
       </AuthProvider>
     </BrowserRouter>

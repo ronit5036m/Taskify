@@ -6,6 +6,7 @@ import improve from "./improve.jpg";
 import secureauth from "./secureauth.jpg";
 import crud from "./crud.jpg";
 import crossplatfrom from "./crossplatfrom.jpg";
+import notaskfound from "./notaskfound.jpg";
 const Logo = {
   task,
   Simplify,
@@ -15,6 +16,7 @@ const Logo = {
   secureauth,
   crud,
   crossplatfrom,
+  notaskfound,
 };
 
 export default Logo;

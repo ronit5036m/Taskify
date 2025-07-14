@@ -1,45 +1,28 @@
+import { Facebook, Github, Instagram, Mail, Twitter } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Twitter } from "lucide-react";
-const Footer = () => {
-  return (
-    <div className="max-md:h-[70vh] h-[40vh] w-full bg-blue-50 flex justify-center max-md:justify-evenly items-center flex-col pt-10">
-      <div className="h-[70px] w-full text-3xl font-bold text-zinc-600 flex justify-center items-center">
-        Taskify.com
-      </div>
-      <div className="h-[100px] w-[40%] max-md:w-full max-md:flex-wrap flex justify-evenly items-center font-medium text-zinc-600 flex-wrap">
-        <Link to="/" className="max-md:p-5 hover:underline">
-          HOME
-        </Link>
-        <Link to="/addtask" className="max-md:p-5 hover:underline">
-          ADD TASK
-        </Link>
-        <Link to="/viewtask" className="max-md:p-5 hover:underline">
-          VIEW TASK
-        </Link>
-        <Link to="/about" className="max-md:p-5 hover:underline">
-          ABOUT US
-        </Link>
-      </div>
-      <div className="text-[#2b7fff] h-14 w-[20%] max-md:w-full flex justify-center items-center gap-10">
-        <div className="p-2.5 border-2 border-[#2b7fff] rounded-full hover:bg-[#2b7fff] hover:text-white transition-colors cursor-pointer">
-          <Twitter />
-        </div>
-        <div className="p-2.5 border-2 border-[#2b7fff] rounded-full hover:bg-[#2b7fff] hover:text-white transition-colors cursor-pointer">
-          <Instagram />
-        </div>
-        <div className="p-2.5 border-2 border-[#2b7fff] rounded-full hover:bg-[#2b7fff] hover:text-white transition-colors cursor-pointer">
-          <Facebook />
-        </div>
-      </div>
-      <div className="text-zinc-600 h-20 w-full flex justify-center items-center font-bold">
-        <p>Copyright &copy;2025 All right reserved</p>
-      </div>
-      <div className="w-full text-[12px] text-zinc-600 flex justify-center gap-4">
-        <Link className="hover:underline">Terms & Conditions</Link>
-        <Link className="hover:underline">Privacy Policy</Link>
-      </div>
-    </div>
-  );
-};
 
-export default Footer;
+export default function Footer() {
+  return (
+    <footer className="w-full border-t border-t-zinc-300 bg-white text-gray-600">
+      <div className="max-w-7xl mx-auto px-4 py-3 flex flex-col sm:flex-row justify-between items-center text-sm">
+        <p className="text-center sm:text-left font-medium">
+          © {new Date().getFullYear()}{" "}
+          <span className="text-blue-600 font-semibold z-0">Taskify</span>. All
+          rights reserved.
+        </p>
+
+        <div className="mt-2 sm:mt-0 flex gap-4">
+          <Link className="hover:text-blue-500 transition-colors">
+            <Facebook size={18} />
+          </Link>
+          <Link className="hover:text-blue-500 transition-colors">
+            <Instagram size={18} />
+          </Link>
+          <Link className="hover:text-blue-500 transition-colors">
+            <Twitter size={18} />
+          </Link>
+        </div>
+      </div>
+    </footer>
+  );
+}

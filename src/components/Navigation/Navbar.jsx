@@ -38,7 +38,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="bg-white shadow-sm fixed w-full z-10">
+    <nav className="bg-white shadow-sm fixed w-full z-990">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex justify-between p-1">
           <div
@@ -58,10 +58,10 @@ const Navbar = () => {
 
         {isLoggedIn && (
           <div
-            className="md:hidden cursor-pointer relative"
+            className="md:hidden cursor-pointer relative mr-10"
             onClick={toogleUser}
           >
-            <CircleUserRound size={35} />
+            <CircleUserRound size={35} className="text-zinc-700" />
             {isUserClick && (
               <div className="h-35 w-30 border border-zinc-200 absolute right-0 mt-5 rounded-2xl z-999 flex items-center justify-center bg-white">
                 <div className="h-11/12 w-11/12 border border-zinc-200 rounded-md flex justify-around flex-col items-center">
@@ -78,20 +78,45 @@ const Navbar = () => {
         )}
 
         <div className="hidden md:flex space-x-6 text-gray-700 font-bold text-lg items-center">
-          <NavLink to="/" className={"hover:text-blue-600 px-3 py-2"}>
+          <NavLink
+            to="/"
+            className={
+              "hover:text-blue-600 px-3 py-2 hover:bg-blue-100 rounded-xl"
+            }
+          >
             Home
           </NavLink>
-          <NavLink to="/about" className={"hover:text-blue-600 px-3 py-2"}>
+          <NavLink
+            to="/about"
+            className={
+              "hover:text-blue-600 px-3 py-2 hover:bg-blue-100 rounded-xl"
+            }
+          >
             About us
           </NavLink>
-          <NavLink to="/addtask" className={"hover:text-blue-600 px-3 py-2"}>
+          <NavLink
+            to="/addtask"
+            className={
+              "hover:text-blue-600 px-3 py-2 hover:bg-blue-100 rounded-xl"
+            }
+          >
             Add task
           </NavLink>
-          <NavLink to="/viewtask" className={"hover:text-blue-600 px-3 py-2"}>
+          <NavLink
+            to="/viewtask"
+            className={
+              "hover:text-blue-600 px-3 py-2 hover:bg-blue-100 rounded-xl"
+            }
+          >
             View task
           </NavLink>
           {isLoggedIn && (
-            <NavLink to="/complete" className={"hover:text-blue-600 px-3 py-2"}>
+            <NavLink
+              to="/complete"
+              className={
+                "hover:text-blue-600 px-3 py-2 hover:bg-blue-100 rounded-xl"
+              }
+            >
               Completed task
             </NavLink>
           )}
@@ -100,7 +125,7 @@ const Navbar = () => {
             <div className="cursor-pointer relative" onClick={toogleUser}>
               <CircleUserRound size={35} />
               {isUserClick && (
-                <div className="h-55 w-45 border border-zinc-200 absolute right-0 mt-5 rounded-2xl shadow-[0px_8px_24px_15px_#e8e8e8] z-999 flex items-center justify-center bg-white">
+                <div className="h-55 w-45 border border-zinc-200 absolute right-0 mt-5 rounded-2xl z-999 flex items-center justify-center bg-white">
                   <div className="h-11/12 w-11/12 border border-zinc-200 rounded-md flex justify-around flex-col items-center">
                     <div className="h-8 w-8 border text-center rounded-full bg-blue-600 text-white flex justify-center items-center">
                       {user.toUpperCase()[0]}
@@ -130,7 +155,7 @@ const Navbar = () => {
           <NavLink
             to="/"
             className={
-              "text-gray-700 hover:text-blue-600 h-10 flex items-center font-medium text-xl pl-5"
+              "text-gray-700 hover:text-blue-600 h-10 flex items-center font-bold text-xl pl-5 hover:bg-blue-100 rounded-xl"
             }
           >
             Home
@@ -138,7 +163,7 @@ const Navbar = () => {
           <NavLink
             to="/about"
             className={
-              "h-10 flex items-center font-medium text-xl pl-5 text-gray-700 hover:text-blue-600"
+              "h-10 flex items-center font-bold text-xl pl-5 text-gray-700  hover:text-blue-600 hover:bg-blue-100 rounded-xl"
             }
           >
             About Us
@@ -146,7 +171,7 @@ const Navbar = () => {
           <NavLink
             to="/addtask"
             className={
-              "h-10 flex items-center font-medium text-xl pl-5 text-gray-700 hover:text-blue-600"
+              "h-10 flex items-center font-bold text-xl pl-5 text-gray-700 hover:text-blue-600 hover:bg-blue-100 rounded-xl"
             }
           >
             Add task
@@ -154,7 +179,7 @@ const Navbar = () => {
           <NavLink
             to="/viewtask"
             className={
-              "h-10 flex items-center font-medium text-xl pl-5 text-gray-700 hover:text-blue-600"
+              "h-10 flex items-center font-bold text-xl pl-5 text-gray-700 hover:text-blue-600 hover:bg-blue-100 rounded-xl"
             }
           >
             View task
@@ -163,7 +188,7 @@ const Navbar = () => {
             <NavLink
               to="/complete"
               className={
-                "h-10 flex items-center font-medium text-xl pl-5 text-gray-700 hover:text-blue-600"
+                "h-10 flex items-center font-bold text-xl pl-5 text-gray-700 hover:text-blue-600 hover:bg-blue-100 rounded-xl"
               }
             >
               Completed task
@@ -171,7 +196,7 @@ const Navbar = () => {
           )}
           {isLoggedIn && (
             <div
-              className="h-10 flex items-center font-medium text-xl pl-5 text-gray-700 hover:text-blue-600 cursor-pointer"
+              className="h-10 flex items-center font-bold text-xl pl-5 text-gray-700 hover:text-blue-600 cursor-pointer hover:bg-blue-100 rounded-xl"
               onClick={handleLogout}
             >
               <LogOut />

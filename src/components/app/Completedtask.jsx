@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import Loading from "../Loading/Loading";
 import { Link } from "react-router-dom";
 import { Plus } from "lucide-react";
+import Tasknotfound from "../Tasknotfound/Tasknotfound";
 
 function formatDate(dt) {
   if (!dt) return "";
@@ -48,21 +49,14 @@ function Completedtask() {
     <>
       <Navbar />
       <div className="min-h-screen p-4">
-        <div className="flex flex-wrap justify-center items-start gap-8">
+        <div className="flex-wrap justify-center items-start gap-8">
           {loading ? (
             <div className="text-center w-full text-zinc-600 text-4xl">
               <Loading />
             </div>
           ) : tasks.length === 0 ? (
-            <div className="text-center h-[100vh] w-full flex justify-center items-center text-zinc-400 text-3xl flex-col">
-              No Completed Tasks found
-              <Link
-                to="/addtask"
-                className="text-[15px] m-10 p-5 rounded-full font-extrabold text-blue-700 bg-blue-200"
-                title="Add new task"
-              >
-                <Plus size={35} />
-              </Link>
+            <div>
+              <Tasknotfound completed="completed" />
             </div>
           ) : (
             tasks.map((task) => (
