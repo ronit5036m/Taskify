@@ -38,7 +38,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="bg-white shadow-md fixed w-full z-10">
+    <nav className="bg-white shadow-sm fixed w-full z-10">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex justify-between p-1">
           <div
@@ -81,6 +81,9 @@ const Navbar = () => {
           <NavLink to="/" className={"hover:text-blue-600 px-3 py-2"}>
             Home
           </NavLink>
+          <NavLink to="/about" className={"hover:text-blue-600 px-3 py-2"}>
+            About us
+          </NavLink>
           <NavLink to="/addtask" className={"hover:text-blue-600 px-3 py-2"}>
             Add task
           </NavLink>
@@ -92,9 +95,6 @@ const Navbar = () => {
               Completed task
             </NavLink>
           )}
-          <NavLink to="/about" className={"hover:text-blue-600 px-3 py-2"}>
-            About us
-          </NavLink>
 
           {isLoggedIn && (
             <div className="cursor-pointer relative" onClick={toogleUser}>
@@ -136,6 +136,14 @@ const Navbar = () => {
             Home
           </NavLink>
           <NavLink
+            to="/about"
+            className={
+              "h-10 flex items-center font-medium text-xl pl-5 text-gray-700 hover:text-blue-600"
+            }
+          >
+            About Us
+          </NavLink>
+          <NavLink
             to="/addtask"
             className={
               "h-10 flex items-center font-medium text-xl pl-5 text-gray-700 hover:text-blue-600"
@@ -161,14 +169,6 @@ const Navbar = () => {
               Completed task
             </NavLink>
           )}
-          <NavLink
-            to="/about"
-            className={
-              "h-10 flex items-center font-medium text-xl pl-5 text-gray-700 hover:text-blue-600"
-            }
-          >
-            About Us
-          </NavLink>
           {isLoggedIn && (
             <div
               className="h-10 flex items-center font-medium text-xl pl-5 text-gray-700 hover:text-blue-600 cursor-pointer"

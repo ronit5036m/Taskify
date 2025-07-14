@@ -43,8 +43,8 @@ export default function LoginForm() {
   return (
     <>
       <Navbar />
-      <div className="flex items-center justify-center min-h-screen p-4 bg-gray-100">
-        <div className="bg-white shadow-lg rounded-2xl p-8 w-full max-w-md">
+      <div className="flex items-center justify-center min-h-screen p-4 bg-[#f8f8f8]">
+        <div className="bg-white shadow-sm rounded-2xl p-8 w-full max-w-md">
           <h2 className="text-2xl font-bold text-center text-blue-700 mb-6">
             Login Account
           </h2>

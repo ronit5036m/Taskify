@@ -2,8 +2,7 @@ import { Link } from "react-router-dom";
 import { Facebook, Instagram, Twitter } from "lucide-react";
 const Footer = () => {
   return (
-    // #141313
-    <div className="max-md:h-[70vh] h-[40vh] w-full bg-[#e4e4e4c7] flex justify-center max-md:justify-evenly items-center flex-col pt-10">
+    <div className="max-md:h-[70vh] h-[40vh] w-full bg-blue-50 flex justify-center max-md:justify-evenly items-center flex-col pt-10">
       <div className="h-[70px] w-full text-3xl font-bold text-zinc-600 flex justify-center items-center">
         Taskify.com
       </div>

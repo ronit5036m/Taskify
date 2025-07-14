@@ -32,8 +32,8 @@ export default function RegisterForm() {
   return (
     <>
       <Navbar />
-      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br bg-gray-100 flex-col">
-        <div className="bg-white shadow-lg rounded-2xl p-8 w-full max-w-md">
+      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br bg-[#f8f8f8] flex-col">
+        <div className="bg-white shadow-sm rounded-2xl p-8 w-full max-w-md">
           <h2 className="text-2xl font-bold text-center text-blue-700 mb-6">
             Create an Account
           </h2>

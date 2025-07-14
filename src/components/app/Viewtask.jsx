@@ -112,18 +112,22 @@ function ViewTask() {
   return (
     <>
       <Navbar />
-      <div>
-        <div className="flex flex-wrap justify-center items-center gap-8">
+      <div className="min-h-screen px-4 py-8 bg-gray-50">
+        <div
+          className={`max-w-7xl mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-3 ${
+            loading ? "mt-0" : "mt-[50px]"
+          }`}
+        >
           {loading ? (
-            <div className="text-center h-[100vh] w-full flex justify-center items-center text-zinc-600 text-4xl">
+            <div className="col-span-full h-screen w-full flex justify-center items-center text-zinc-600 text-4xl">
               <Loading />
             </div>
           ) : tasks.length === 0 ? (
-            <div className="text-center h-[100vh] w-full flex justify-center items-center text-zinc-400 text-3xl flex-col">
+            <div className="col-span-full flex flex-col justify-center items-center text-zinc-400 text-3xl min-h-[70vh]">
               No tasks yet.
               <Link
                 to="/addtask"
-                className="text-[15px] m-10 p-5 rounded-full font-extrabold text-blue-700 bg-blue-200"
+                className="mt-6 p-4 rounded-full font-extrabold text-blue-700 bg-blue-200 hover:bg-blue-300 transition-all"
                 title="Add new task"
               >
                 <Plus size={35} />
@@ -132,20 +136,20 @@ function ViewTask() {
           ) : (
             tasks.map((task) => (
               <div
-                className="w-full max-w-[550px] min-h-[400px] bg-white rounded-2xl p-7 flex flex-col gap-6 justify-center shadow-[0px_5px_6px_3px_rgba(0,_0,_0,_0.1)] mb-[50px]"
+                className="bg-white rounded-2xl shadow-md p-6 flex flex-col justify-between gap-4 border border-gray-100"
                 key={task._id}
               >
-                <div className="flex justify-between items-center mb-1">
+                <div className="flex justify-between items-center">
                   <span
-                    className={`text-sm px-2 py-1 rounded font-semibold ${
+                    className={`text-xs font-semibold px-2 py-1 rounded ${
                       task.completed
                         ? "bg-green-100 text-green-700"
                         : "bg-red-100 text-red-700"
                     }`}
                   >
-                    {task.completed ? "Task completed" : "Not complete yet"}
+                    {task.completed ? "Completed" : "Incomplete"}
                   </span>
-                  <span className="text-sm px-2 py-1 rounded ml-2 font-bold text-zinc-400">
+                  <span className="text-xs font-medium text-zinc-400 flex items-center pl-5">
                     {formatDate(task.createdAt)}
                   </span>
                 </div>
@@ -155,23 +159,24 @@ function ViewTask() {
                     <input
                       value={editTitle}
                       onChange={(e) => setEditTitle(e.target.value)}
-                      className="border rounded px-3 py-2 font-medium text-xl border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                      className="border rounded px-3 py-2 font-medium text-lg border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
                     />
                     <textarea
                       value={editDesc}
                       onChange={(e) => setEditDesc(e.target.value)}
+                      rows="3"
                       className="border rounded px-3 py-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none"
                     />
-                    <div className="flex gap-2 flex-wrap">
+                    <div className="flex flex-wrap gap-2">
                       <button
                         onClick={() => saveEdit(task._id)}
-                        className="bg-blue-500 text-white px-4 py-2 rounded font-bold text-lg cursor-pointer"
+                        className="bg-blue-500 text-white px-4 py-2 rounded font-bold text-sm hover:bg-blue-600"
                       >
                         Save
                       </button>
                       <button
                         onClick={cancelEdit}
-                        className="bg-gray-300 text-gray-900 px-4 py-2 rounded font-bold text-lg cursor-pointer"
+                        className="bg-gray-300 text-gray-800 px-4 py-2 rounded font-bold text-sm hover:bg-gray-400"
                       >
                         Cancel
                       </button>
@@ -179,39 +184,36 @@ function ViewTask() {
                   </>
                 ) : (
                   <>
-                    <div className="text-2xl font-bold break-words">
+                    <div className="text-xl font-bold text-gray-800 break-words">
                       {task.title}
                     </div>
-                    <div className="text-base font-normal mb-2 break-words">
+                    <div className="text-sm text-gray-600 break-words">
                       {task.description}
                     </div>
-                    <div className="flex gap-2 items-center flex-wrap">
+                    <div className="flex items-center flex-wrap gap-3 mt-2">
                       <button
                         onClick={() => startEdit(task)}
-                        className="bg-blue-500 text-white px-4 py-2 rounded font-bold text-lg cursor-pointer"
+                        className="bg-blue-500 text-white px-3 py-1.5 rounded text-sm font-medium hover:bg-blue-600"
                       >
                         Update
                       </button>
                       <button
                         onClick={() => handleDelete(task._id)}
-                        className="bg-[#ee3f3f] text-white px-4 py-2 rounded font-bold text-lg cursor-pointer"
+                        className="bg-red-500 text-white px-3 py-1.5 rounded text-sm font-medium hover:bg-red-600"
                       >
                         Delete
                       </button>
-                      <input
-                        type="checkbox"
-                        checked={task.completed}
-                        onChange={() =>
-                          handleComplete(task._id, task.completed)
-                        }
-                        className={`ml-4 w-7 h-7 rounded-full border-gray-300 cursor-pointer ${
-                          task.completed ? "bg-green-400" : ""
-                        }`}
-                        style={{
-                          accentColor: task.completed ? "#22c55e" : "#eee",
-                          boxShadow: "0 0 2px #aaa",
-                        }}
-                      />
+                      <label className="flex items-center gap-2 ml-auto cursor-pointer">
+                        <input
+                          type="checkbox"
+                          checked={task.completed}
+                          onChange={() =>
+                            handleComplete(task._id, task.completed)
+                          }
+                          className="w-5 h-5 accent-green-500 rounded cursor-pointer"
+                        />
+                        <span className="text-sm text-gray-500">Mark done</span>
+                      </label>
                     </div>
                   </>
                 )}

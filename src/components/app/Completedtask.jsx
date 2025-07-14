@@ -68,7 +68,7 @@ function Completedtask() {
             tasks.map((task) => (
               <div
                 key={task._id}
-                className="w-full max-w-[500px] bg-white rounded-2xl p-6 flex flex-col gap-4 mt-[60px] shadow-[0px_5px_6px_3px_rgba(0,_0,_0,_0.1)]"
+                className="w-full max-w-[500px] bg-white rounded-2xl p-6 flex flex-col gap-4 mt-[60px] shadow-md border-gray-100"
               >
                 <div className="flex justify-between items-center text-sm">
                   <span className="bg-green-100 text-green-700 px-2 py-1 rounded font-semibold">
