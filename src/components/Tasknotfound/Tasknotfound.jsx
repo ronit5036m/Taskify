@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Tasknotfound = ({ completed }) => {
   return (
     <>
-      <div className="h-[100vh] flex justify-center items-center flex-col">
+      <div className="h-[80vh] flex justify-center items-center flex-col">
         <div>
           <img
             src={Logo.notaskfound}

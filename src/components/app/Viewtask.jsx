@@ -113,7 +113,7 @@ function ViewTask() {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen px-4 py-8 bg-white">
+      <div className="min-h-[88vh] px-4 py-8 bg-white">
         <div
           className={`max-w-7xl mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-3`}
         >
@@ -122,7 +122,7 @@ function ViewTask() {
               <Loading />
             </div>
           ) : tasks.length === 0 ? (
-            <div className="col-span-full h-[100vh] flex items-center justify-center">
+            <div className="col-span-full h-[75vh] flex items-center justify-center">
               <Tasknotfound completed="" />
             </div>
           ) : (

@@ -48,7 +48,7 @@ function Completedtask() {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen p-4">
+      <div className="min-h-[88vh] p-4">
         <div className="flex-wrap justify-center items-start gap-8">
           {loading ? (
             <div className="text-center w-full text-zinc-600 text-4xl">

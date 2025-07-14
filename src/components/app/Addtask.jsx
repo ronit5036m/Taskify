@@ -27,11 +27,11 @@ function AddTask() {
   return (
     <>
       <Navbar />
-      <div className="flex justify-center items-center min-h-[110vh] bg-[#fdfdfd]">
+      <div className="flex justify-center items-end min-h-[92vh] max-md:min-h-[88vh] bg-[#fdfdfd]">
         <div className="h-full w-full flex justify-center">
           <form
             onSubmit={handleSubmit(handleAdd)}
-            className="w-full max-w-[550px] shadow-md rounded-2xl p-7 flex flex-col gap-5 bg-white min-h-[450px] justify-evenly border border-[#dddddd8f]"
+            className="w-full max-w-[550px] shadow-md rounded-2xl p-7 flex flex-col gap-5 bg-white min-h-[450px] justify-evenly border border-[#dddddd8f] mb-10"
           >
             <h2 className="text-4xl font-bold mb-2 text-left text-zinc-600">
               Taskify
