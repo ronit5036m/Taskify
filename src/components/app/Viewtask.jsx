@@ -128,7 +128,7 @@ function ViewTask() {
           ) : (
             tasks.map((task) => (
               <div
-                className="bg-white rounded-2xl shadow-md p-6 flex flex-col justify-between gap-4 border border-gray-100 m-10"
+                className="bg-white rounded-2xl shadow-md p-6 flex flex-col justify-between gap-4 border border-gray-100 mt-10"
                 key={task._id}
               >
                 <div className="flex justify-between items-center">
