@@ -1,5 +1,4 @@
-import "./Loadinglogo.css";
-
+import "./LoadingLogo.css";
 const LoadingLogo = () => {
   return (
     <>

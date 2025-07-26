@@ -11,8 +11,8 @@ import Errorpage from "./pages/Error/Errorpage";
 import { PublicRoute, PrivateRoute } from "./auth/Auth";
 import { AuthProvider } from "./Context/AuthContext";
 import Completedtask from "./components/app/Completedtask";
-import "./App.css";
 import LoadingLogo from "./components/Loadinglogo/LoadingLogo";
+import "./App.css";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
