@@ -1,0 +1,39 @@
+.loading {
+  animation: loading 2s linear forwards infinite;
+  position: relative;
+}
+.progress {
+  z-index: 90;
+}
+
+.progress::before {
+  content: "";
+  height: 100%;
+  background-color: rgba(28, 105, 247, 0.753);
+  z-index: 111;
+  position: absolute;
+  border-radius: 50px;
+  animation: progresss 2s linear;
+  z-index: 111;
+}
+
+@keyframes loading {
+  0% {
+    transform: scale(1.3);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1.3);
+  }
+}
+
+@keyframes progresss {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}

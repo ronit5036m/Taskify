@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import RegisterForm from "./pages/Register/Register";
@@ -10,11 +11,23 @@ import Errorpage from "./pages/Error/Errorpage";
 import { PublicRoute, PrivateRoute } from "./auth/Auth";
 import { AuthProvider } from "./Context/AuthContext";
 import Completedtask from "./components/app/Completedtask";
-
 import "./App.css";
-import Tasknotfound from "./components/Tasknotfound/Tasknotfound";
+import LoadingLogo from "./components/Loadinglogo/LoadingLogo";
 
 const App = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <LoadingLogo />;
+  }
+
   return (
     <BrowserRouter>
       <AuthProvider>
@@ -68,7 +81,6 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<Errorpage />} />
-          <Route path="/not" element={<Tasknotfound />} />
         </Routes>
       </AuthProvider>
     </BrowserRouter>
