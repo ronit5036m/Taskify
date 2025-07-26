@@ -3,7 +3,7 @@ const LoadingLogo = () => {
   return (
     <>
       <div>
-        <div className="h-[100vh] border flex justify-center items-center flex-col">
+        <div className="h-[100vh] flex justify-center items-center flex-col">
           <div className="text-4xl font-bold text-blue-500 loading">
             Taskify
           </div>
