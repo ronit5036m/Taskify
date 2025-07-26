@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Menu, X, CircleUserRound, LogOut } from "lucide-react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
-import "../Navigation/Navbar.css";
+import { toast } from "react-hot-toast";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../../Context/AuthContext";
-import { toast } from "react-toastify";
+import "../Navigation/Navbar.css";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

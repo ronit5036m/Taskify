@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navigation/Navbar";
 import axiosInstance from "../../api/axiosInstance";

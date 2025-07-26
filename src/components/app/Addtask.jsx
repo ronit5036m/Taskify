@@ -1,5 +1,5 @@
 import axiosInstance from "../../api/axiosInstance";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 import Navbar from "../Navigation/Navbar";
 import Footer from "../Footer/Footer";
 import { useForm } from "react-hook-form";

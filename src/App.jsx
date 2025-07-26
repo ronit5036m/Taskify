@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
+import { Toaster } from "react-hot-toast";
 import RegisterForm from "./pages/Register/Register";
 import LoginForm from "./pages/Login/Login";
 import Home from "./pages/Home/Home";
@@ -31,7 +31,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <AuthProvider>
-        <ToastContainer />
+        <Toaster />
         <Routes>
           {/* Protected Routes */}
           <Route

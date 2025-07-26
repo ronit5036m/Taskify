@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axiosInstance from "../../api/axiosInstance";
 import Navbar from "../Navigation/Navbar";
 import Footer from "../Footer/Footer";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 import Loading from "../Loading/Loading";
-import { Link } from "react-router-dom";
-import { Plus } from "lucide-react";
 import Tasknotfound from "../Tasknotfound/Tasknotfound";
 
 function formatDate(dt) {
